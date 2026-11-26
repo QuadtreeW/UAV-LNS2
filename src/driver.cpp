@@ -65,6 +65,8 @@ int main(int argc, char** argv)
         // event-driven multi-leg UAV mode
         ("lifelong", po::value<bool>()->default_value(false),
          "Enable event-driven multi-leg UAV planning")
+        ("pairedTasks", po::value<bool>()->default_value(false),
+         "Key follow-up task draws by seed, aircraft and leg for paired experiments")
         ("simulationTime", po::value<int>()->default_value(2000),
          "Global timestep horizon in lifelong mode")
         ("legsPerAircraft", po::value<int>()->default_value(3),
@@ -162,6 +164,7 @@ int main(int argc, char** argv)
         options.max_no_progress = vm["maxNoProgress"].as<int>();
         options.planning_time = vm["planningTime"].as<double>();
         options.seed = vm["seed"].as<int>();
+        options.paired_tasks = vm["pairedTasks"].as<bool>();
         options.screen = screen;
         options.use_sipp = vm["sipp"].as<bool>();
         options.neighbor_size = vm["neighborSize"].as<int>();

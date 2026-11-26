@@ -2,5 +2,6 @@
 analysis
 bin
 cmake*
+!CMakeLists.txt
 exp*
 debug

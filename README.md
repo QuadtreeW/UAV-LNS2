@@ -212,6 +212,8 @@ The command produces:
 
 It is normal for an individual leg to report `iterations = 1`. Each leg is planned against the immutable reservations of all ACTIVE flights. If the initial SIPP/PP path already satisfies those reservations, no additional LNS repair iteration is needed.
 
+For Lifelong regression tests, the standalone discrete trajectory checker, and the paired radius experiment, see [Tests and evaluation](tests/README.md).
+
 ## Classic MAPF Usage
 
 The original single-task workflow remains available when Lifelong mode is disabled:

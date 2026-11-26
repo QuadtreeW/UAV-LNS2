@@ -180,6 +180,13 @@ void UAVLifelongSystem::processArrivals(int global_time)
             plane.finished = true;
             continue;
         }
+        // Initial releases are drawn in aircraft order in the constructor.
+        // Key each later task independently of the order in which flights arrive.
+        if (options.paired_tasks)
+        {
+            std::seed_seq task_key{options.seed, plane.id, plane.generated_legs};
+            rng.seed(task_key);
+        }
         int rest = sampleInclusive(options.rest_min, options.rest_max);
         int destination = chooseDestination(plane.current_location);
         createFlight(plane.id, destination, global_time + rest);

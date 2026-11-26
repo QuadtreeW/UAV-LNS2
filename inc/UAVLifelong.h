@@ -42,6 +42,7 @@ struct LifelongOptions
     int max_no_progress = 600;
     double planning_time = 10;
     int seed = 0;
+    bool paired_tasks = false;
     int screen = 1;
     bool use_sipp = true;
     int neighbor_size = 8;
